@@ -19,6 +19,13 @@ def myCommandCallback(cmd):
             GPIO.output(17, True)
         elif command == "off":
             GPIO.output(17, False)
+        elif command == "blink":
+            for i in range (0,10):
+             GPIO.output(17,True)
+             time.sleep(0.1)
+             GPIO.output(17,False)
+             time.sleep(0.1)
+
 
 try:
     options = ibmiotf.application.ParseConfigFile("/home/pi/device.cfg")
